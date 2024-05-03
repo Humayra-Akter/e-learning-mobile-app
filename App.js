@@ -2,6 +2,7 @@ import { View, Text } from "react-native";
 import LoginScreen from "./App/Screen/LoginScreen";
 import { useFonts } from "expo-font";
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
+import HomeScreen from "./App/Screen/HomeScreen";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,6 +20,7 @@ export default function App() {
       <View>
         <SignedIn>
           <Text>You are signed in</Text>
+          <HomeScreen />
         </SignedIn>
         <SignedOut>
           <LoginScreen />
