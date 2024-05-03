@@ -3,6 +3,8 @@ import LoginScreen from "./App/Screen/LoginScreen";
 import { useFonts } from "expo-font";
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import HomeScreen from "./App/Screen/HomeScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import TabNavigation from "./App/Navigations/TabNavigation";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,8 +21,9 @@ export default function App() {
     >
       <View>
         <SignedIn>
-          <Text>You are signed in</Text>
-          <HomeScreen />
+          <NavigationContainer>
+            <TabNavigation />
+          </NavigationContainer>
         </SignedIn>
         <SignedOut>
           <LoginScreen />
