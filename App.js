@@ -1,10 +1,10 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import LoginScreen from "./App/Screen/LoginScreen";
 import { useFonts } from "expo-font";
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
-import HomeScreen from "./App/Screen/HomeScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from "./App/Navigations/TabNavigation";
+import Colors from "./App/Utils/Colors";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,7 +19,7 @@ export default function App() {
         "pk_test_YnVyc3Rpbmctc2hhZC00OC5jbGVyay5hY2NvdW50cy5kZXYk"
       }
     >
-      <View>
+      <View style={styles.container}>
         <SignedIn>
           <NavigationContainer>
             <TabNavigation />
@@ -32,3 +32,11 @@ export default function App() {
     </ClerkProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Colors.PRIMARY,
+    marginTop: 20,
+  },
+});

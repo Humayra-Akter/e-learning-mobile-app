@@ -8,6 +8,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
+
 export default function TabNavigation() {
   return (
     <Tab.Navigator
@@ -20,7 +21,7 @@ export default function TabNavigation() {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ color, size }) => {
-            <Ionicons name="home" size={size} color={color} />;
+            <Ionicons name="home" size={24} color="black" />;
           },
         }}
       />
@@ -29,7 +30,7 @@ export default function TabNavigation() {
         component={ProfileScreen}
         options={{
           tabBarIcon: ({ color, size }) => {
-            <Ionicons name="home" size={size} color={color} />;
+            <Ionicons name="supervised-user-circle" size={24} color="black" />;
           },
         }}
       />
@@ -38,7 +39,7 @@ export default function TabNavigation() {
         component={LeaderBoard}
         options={{
           tabBarIcon: ({ color, size }) => {
-            <MaterialIcons name="leaderboard" size={size} color={color} />;
+            <MaterialIcons name="leaderboard" size={24} color="black" />;
           },
         }}
       />
@@ -47,7 +48,7 @@ export default function TabNavigation() {
         component={MyCourse}
         options={{
           tabBarIcon: ({ color, size }) => {
-            <Ionicons name="book" size={size} color={color} />;
+            <Ionicons name="book" size={24} color="black" />;
           },
         }}
       />
