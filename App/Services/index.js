@@ -3,10 +3,13 @@ import { request, gql } from "graphql-request";
 const MASTER_URL =
   "https://api-ap-south-1.hygraph.com/v2/clvrqa35h0bes07usa0ijj4rr/master";
 
-export const getCourseList = async () => {
-  const query = gql`
-    query CoursList {
-      courses(where: { courseLevel: Basic }) {
+export const getCourseList = async (level) => {
+  const query =
+    gql`
+    query CourseList {
+      courses(where: { courseLevel: ` +
+    level +
+    ` }) {
         id
         name
         price
