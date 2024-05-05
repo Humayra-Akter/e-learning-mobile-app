@@ -1,21 +1,46 @@
-import { View, Text } from "react-native";
-import React, { useEffect } from "react";
+import { View, Text, FlatList, Image } from "react-native";
+import React, { useEffect, useState } from "react";
 import { getCourseList } from "../../Services/index";
+import SubHeading from "../SubHeading";
+import Colors from "../../Utils/Colors";
 
 export default function CourseList({ level }) {
+  const [courseList, setCourseList] = useState([]);
+
   useEffect(() => {
     getCourses();
   }, []);
 
   const getCourses = () => {
     getCourseList(level).then((res) => {
-      console.log(res);
+      setCourseList(res?.courses);
     });
   };
 
   return (
     <View>
-      <Text>CourseList</Text>
+      <SubHeading text={"Basic Courses"} />
+      <FlatList
+        data={courseList}
+        key={courseList.id}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item }) => (
+          <View
+            style={{
+              padding: 10,
+              backgroundColor: Colors.PRIMARY,
+              marginRight: 14,
+              borderRadius: 16,
+            }}
+          >
+            <Image
+              source={{ uri: item?.banner?.url }}
+              style={{ width: 210, borderRadius: 10, height: 120 }}
+            />
+          </View>
+        )}
+      />
     </View>
   );
 }

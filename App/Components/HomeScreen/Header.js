@@ -92,7 +92,7 @@ export default function Header() {
           <TextInput
             placeholder="Search Courses"
             style={{
-              fontFamily: "outfit-meduum",
+              fontFamily: "outfit-medium",
               fontSize: 16,
               paddingLeft: 16,
             }}
