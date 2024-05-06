@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function MyCourse() {
+export default function CourseDetailScreen() {
   return (
     <View>
-      <Text>MyCourse</Text>
+      <Text>CourseDetailScreen</Text>
     </View>
   )
 }
