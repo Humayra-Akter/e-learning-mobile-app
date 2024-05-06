@@ -7,7 +7,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{
+      backgroundColor:"#000"
+    }}>
       <View
         style={{
           backgroundColor: Colors.PRIMARY,

@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import Colors from "../Utils/Colors";
 
-export default function SubHeading({ text, color = Colors.PRIMARY }) {
+export default function SubHeading({ text, color = Colors.WHITE }) {
   return (
     <View>
       <Text
