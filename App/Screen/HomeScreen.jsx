@@ -3,13 +3,14 @@ import React from "react";
 import Header from "../Components/HomeScreen/Header";
 import Colors from "../Utils/Colors";
 import CourseList from "../Components/HomeScreen/CourseList";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
   return (
-    <SafeAreaView style={{
-      backgroundColor:"#000"
-    }}>
+    <View
+      style={{
+        backgroundColor: "#000",
+      }}
+    >
       <View
         style={{
           backgroundColor: Colors.PRIMARY,
@@ -30,6 +31,6 @@ export default function HomeScreen() {
           <CourseList level={"Advance"} />
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }

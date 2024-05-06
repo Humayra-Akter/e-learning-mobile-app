@@ -1,12 +1,12 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "../Screen/HomeScreen";
 import ProfileScreen from "../Screen/ProfileScreen";
 import LeaderBoard from "../Screen/LeaderBoard";
 import MyCourse from "../Screen/MyCourse";
 import { Ionicons } from "@expo/vector-icons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Feather from "@expo/vector-icons/Feather";
+import HomeScreenNavigation from "./HomeScreenNavigation";
 
 const Tab = createBottomTabNavigator();
 
@@ -19,7 +19,7 @@ export default function TabNavigation() {
     >
       <Tab.Screen
         name="home"
-        component={HomeScreen}
+        component={HomeScreenNavigation}
         options={{
           tabBarIcon: ({ color, size }) => {
             <Ionicons name="home" size={24} color="black" />;
@@ -31,11 +31,11 @@ export default function TabNavigation() {
         component={ProfileScreen}
         options={{
           tabBarIcon: ({ color, size }) => {
-           <MaterialIcons
-             name="supervised-user-circle"
-             size={24}
-             color="black"
-           />;
+            <MaterialIcons
+              name="supervised-user-circle"
+              size={24}
+              color="black"
+            />;
           },
         }}
       />
@@ -44,7 +44,7 @@ export default function TabNavigation() {
         component={LeaderBoard}
         options={{
           tabBarIcon: ({ color, size }) => {
-            <MaterialIcons name="leaderboard" size={24} color="black" />;
+            <MaterialIcons name="leaderboard" size={size} color={color} />;
           },
         }}
       />
@@ -53,7 +53,7 @@ export default function TabNavigation() {
         component={MyCourse}
         options={{
           tabBarIcon: ({ color, size }) => {
-           <Feather name="book-open" size={24} color="black" />;
+            <Feather name="book-open" size={24} color="black" />;
           },
         }}
       />

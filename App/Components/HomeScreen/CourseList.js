@@ -1,13 +1,13 @@
-import { View, Text, FlatList, Image } from "react-native";
+import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from "react";
 import { getCourseList } from "../../Services/index";
 import SubHeading from "../SubHeading";
-import Colors from "../../Utils/Colors";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import CourseItem from "./CourseItem";
+import { useNavigation } from "@react-navigation/native";
 
 export default function CourseList({ level }) {
   const [courseList, setCourseList] = useState([]);
+  const navigation = useNavigation();
 
   useEffect(() => {
     getCourses();
@@ -30,7 +30,15 @@ export default function CourseList({ level }) {
         key={courseList.id}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        renderItem={({ item }) => <CourseItem item={item} />}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("course-detail", { course: item })
+            }
+          >
+            <CourseItem item={item} />
+          </TouchableOpacity>
+        )}
       />
     </View>
   );
