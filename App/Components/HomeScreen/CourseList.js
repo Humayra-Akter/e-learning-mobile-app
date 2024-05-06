@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { getCourseList } from "../../Services/index";
 import SubHeading from "../SubHeading";
 import Colors from "../../Utils/Colors";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function CourseList({ level }) {
   const [courseList, setCourseList] = useState([]);
@@ -38,6 +39,21 @@ export default function CourseList({ level }) {
               source={{ uri: item?.banner?.url }}
               style={{ width: 210, borderRadius: 10, height: 120 }}
             />
+            <View style={{ padding: 8 }}>
+              <Text
+                style={{
+                  fontFamily: "outfit-bold",
+                  fontSize: 16,
+                  color: Colors.WHITE,
+                }}
+              >
+                {item?.name}
+              </Text>
+            </View>
+            <View>
+              <Ionicons name="book-outline" size={24} color="white" />
+              <Text>{item?.chapters?.length} Chapter</Text>
+            </View>
           </View>
         )}
       />

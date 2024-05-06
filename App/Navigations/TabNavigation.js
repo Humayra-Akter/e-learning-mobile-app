@@ -5,7 +5,8 @@ import ProfileScreen from "../Screen/ProfileScreen";
 import LeaderBoard from "../Screen/LeaderBoard";
 import MyCourse from "../Screen/MyCourse";
 import { Ionicons } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import Feather from "@expo/vector-icons/Feather";
 
 const Tab = createBottomTabNavigator();
 
@@ -30,7 +31,11 @@ export default function TabNavigation() {
         component={ProfileScreen}
         options={{
           tabBarIcon: ({ color, size }) => {
-            <Ionicons name="supervised-user-circle" size={24} color="black" />;
+           <MaterialIcons
+             name="supervised-user-circle"
+             size={24}
+             color="black"
+           />;
           },
         }}
       />
@@ -48,7 +53,7 @@ export default function TabNavigation() {
         component={MyCourse}
         options={{
           tabBarIcon: ({ color, size }) => {
-            <Ionicons name="book" size={24} color="black" />;
+           <Feather name="book-open" size={24} color="black" />;
           },
         }}
       />

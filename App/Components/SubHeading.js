@@ -10,6 +10,7 @@ export default function SubHeading({ text, color = Colors.PRIMARY }) {
           fontFamily: "outfit-bold",
           fontSize: 24,
           color: color,
+          paddingLeft: 4,
         }}
       >
         {text}

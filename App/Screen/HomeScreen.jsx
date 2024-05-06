@@ -16,7 +16,7 @@ export default function HomeScreen() {
       >
         <Header />
       </View>
-      <View style={{ padding: 12 }}>
+      <View style={{ padding: 8 }}>
         <CourseList level={"Basic"} />
       </View>
     </View>

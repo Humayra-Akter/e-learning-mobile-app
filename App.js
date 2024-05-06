@@ -22,7 +22,7 @@ export default function App() {
       <View style={styles.container}>
         <SignedIn>
           <NavigationContainer>
-            <TabNavigation />
+            <TabNavigation style={{ backgroundColor: "black" }} />
           </NavigationContainer>
         </SignedIn>
         <SignedOut>
