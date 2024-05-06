@@ -20,7 +20,7 @@ export default function CourseList({ level }) {
 
   return (
     <View>
-      <SubHeading text={"Basic Courses"} />
+      <SubHeading text={level + " Courses"} color={level=='Basic' && Colors.WHITE} />
       <FlatList
         data={courseList}
         key={courseList.id}
@@ -30,7 +30,7 @@ export default function CourseList({ level }) {
           <View
             style={{
               padding: 10,
-              backgroundColor: Colors.PRIMARY,
+              backgroundColor: Colors.LIGHT_PRIMARY,
               marginRight: 14,
               borderRadius: 16,
             }}
@@ -39,7 +39,7 @@ export default function CourseList({ level }) {
               source={{ uri: item?.banner?.url }}
               style={{ width: 210, borderRadius: 10, height: 120 }}
             />
-            <View style={{ padding: 8 }}>
+            <View style={{ padding: 4 }}>
               <Text
                 style={{
                   fontFamily: "outfit-bold",
@@ -50,9 +50,55 @@ export default function CourseList({ level }) {
                 {item?.name}
               </Text>
             </View>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: 6,
+                  marginTop: 6,
+                  paddingLeft: 4,
+                }}
+              >
+                <Ionicons name="book-outline" size={24} color="white" />
+                <Text style={{ color: "white", fontFamily: "outfit-medium" }}>
+                  {item?.chapters?.length} Chapter
+                </Text>
+              </View>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: 6,
+                  marginTop: 6,
+                  paddingLeft: 4,
+                }}
+              >
+                <Ionicons name="timer-outline" size={24} color="white" />
+                <Text style={{ color: "white", fontFamily: "outfit-medium" }}>
+                  {item?.time}
+                </Text>
+              </View>
+            </View>
             <View>
-              <Ionicons name="book-outline" size={24} color="white" />
-              <Text>{item?.chapters?.length} Chapter</Text>
+              <Text
+                style={{
+                  color: Colors.LIGHT_PRIMARY,
+                  fontFamily: "outfit-medium",
+                  marginTop: 6,
+                  paddingLeft: 4,
+                }}
+              >
+                {item?.price == 0 ? "Free" : item?.price}
+              </Text>
             </View>
           </View>
         )}
