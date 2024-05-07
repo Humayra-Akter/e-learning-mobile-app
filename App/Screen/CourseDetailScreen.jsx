@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import Colors from "../Utils/Colors";
+import DetailSection from "../Components/CourseDetailScreen/DetailSection";
 
 export default function CourseDetailScreen() {
   const navigation = useNavigation();
@@ -12,14 +13,17 @@ export default function CourseDetailScreen() {
   }, []);
 
   return (
-    <View
-      style={{
-        padding: 12,
-      }}
-    >
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back-circle" size={40} color={Colors.PRIMARY} />
-      </TouchableOpacity>
-    </View>
+    params.course && (
+      <View
+        style={{
+          padding: 12,
+        }}
+      >
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Ionicons name="arrow-back-circle" size={34} color={Colors.PRIMARY} />
+          <DetailSection course={params?.course} />
+        </TouchableOpacity>
+      </View>
+    )
   );
 }
