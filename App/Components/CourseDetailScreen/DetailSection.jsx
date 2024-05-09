@@ -20,15 +20,18 @@ export default function DetailSection({ course }) {
           borderRadius: 18,
         }}
       />
-      <Text
-        style={{
-          fontFamily: "outfit-medium",
-          fontSize: 22,
-          marginTop: 10,
-        }}
-      >
-        {course?.name}
-      </Text>
+      <View style={{ padding: 10 }}>
+        <Text
+          style={{
+            fontFamily: "outfit-bold",
+            fontSize: 22,
+            marginTop: 10,
+            color: Colors.PRIMARY,
+          }}
+        >
+          {course?.name}
+        </Text>
+      </View>
 
       <View>
         <View style={styles.rowStyle}>
@@ -43,6 +46,26 @@ export default function DetailSection({ course }) {
           <OptionItem icon={"cellular-outline"} value={course.level} />
         </View>
       </View>
+      <View>
+        <Text
+          style={{
+            fontFamily: "outfit-medium",
+            fontSize: 22,
+          }}
+        >
+          Description
+        </Text>
+        <Text
+          style={{
+            fontFamily: "outfit-",
+            fontSize: 14,
+            textAlign: "justify",
+            lineHeight: 20,
+          }}
+        >
+          {course?.des?.markdown}
+        </Text>
+      </View>
     </View>
   );
 }
@@ -52,6 +75,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingRight: 10,
+    marginBottom: 10,
   },
 });
