@@ -2,6 +2,7 @@ import { View, Text, Image, Dimensions, StyleSheet } from "react-native";
 import React from "react";
 import Colors from "../../Utils/Colors";
 import OptionItem from "./OptionItem";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function DetailSection({ course }) {
   return (
@@ -65,6 +66,57 @@ export default function DetailSection({ course }) {
         >
           {course?.des?.markdown}
         </Text>
+      </View>
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+          gap: 10,
+        }}
+      >
+        <View>
+          <TouchableOpacity
+            style={{
+              padding: 10,
+              borderRadius: 14,
+              backgroundColor: Colors.PRIMARY,
+            }}
+            onPress={{}}
+          >
+            <Text
+              style={{
+                fontFamily: "outfit-bold",
+                fontSize: 16,
+                textAlign: "center",
+                color: Colors.WHITE,
+              }}
+            >
+              Enroll for Free
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View>
+          <TouchableOpacity
+            style={{
+              padding: 10,
+              borderRadius: 14,
+              backgroundColor: Colors.LIGHT_PRIMARY,
+            }}
+            onPress={{}}
+          >
+            <Text
+              style={{
+                fontFamily: "outfit-bold",
+                fontSize: 16,
+                textAlign: "center",
+                color: Colors.WHITE,
+              }}
+            >
+              Membership for $2.99/Month
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
