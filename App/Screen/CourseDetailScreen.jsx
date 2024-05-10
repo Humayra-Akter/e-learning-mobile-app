@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import React, { useEffect } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation, useRoute } from "@react-navigation/native";
@@ -15,7 +15,7 @@ export default function CourseDetailScreen() {
 
   return (
     params.course && (
-      <View
+      <ScrollView
         style={{
           padding: 12,
         }}
@@ -25,7 +25,7 @@ export default function CourseDetailScreen() {
           <DetailSection course={params?.course} />
         </TouchableOpacity>
         <ChapterSection chapterList={params?.course?.chapters} />
-      </View>
+      </ScrollView>
     )
   );
 }

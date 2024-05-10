@@ -1,13 +1,26 @@
 import { View, Text } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import Colors from "../../Utils/Colors";
 
 export default function ChapterSection({ chapterList }) {
   return (
     chapterList && (
       <View>
         {chapterList.map((item, index) => (
-          <View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+              justifyContent: "space-between",
+              borderWidth: 1,
+              borderRadius: 10,
+              marginTop: 12,
+              padding: 10,
+              borderColor: Colors.PRIMARY,
+            }}
+          >
             <View
               style={{
                 display: "flex",
@@ -31,8 +44,8 @@ export default function ChapterSection({ chapterList }) {
               >
                 {item?.title}
               </Text>
-              <Ionicons name="play-circle" size={24} color="black" />
             </View>
+            <Ionicons name="md-lock-closed" size={24} color={Colors.GRAY} />
           </View>
         ))}
       </View>
